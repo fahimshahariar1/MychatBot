@@ -1,5 +1,5 @@
 from google import genai
-genai.config.api_key = "AIzaSyAfR5GbbifWkLx0Fml3GQHHouDeyj2aksY"
+genai.config.api_key = ""
 
 
 response = genai.models.generate_content(
