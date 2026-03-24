@@ -3,4 +3,5 @@ This is just a fun project where I used gemini to create a chatbot named BanglaB
 > For styling I used 
 * pyfiglet
 * colorama
+  
 ![Screenshot 2026-03-24 224017](https://github.com/user-attachments/assets/5a064a43-2f13-4a53-bf42-3103a4ffc4a5)
