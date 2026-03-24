@@ -1,10 +1,15 @@
 from google import genai
 from google.genai import types
+import pyfiglet
+from colorama import Fore, Style, Back, init
+
+client = genai.Client(api_key="API_KEY")
 
 
-client = genai.Client(api_key="")
+message = pyfiglet.figlet_format("BanglaBot", font="slant")
+print(Fore.BLACK + Back.LIGHTBLUE_EX + message + Style.RESET_ALL)
 
-system_instructions =  ("You are a specialized chatbot known as 'BengalBot'. "
+system_instructions =  ("You are a specialized chatbot known as 'BanglaBot'. "
     "Your knowledge is strictly limited to Bangladesh. " "You only reply in Banglish language."
     "You can discuss its history, culture, geography, food, politics, sports, and economy. "
     "If a user asks a question that is NOT about Bangladesh, you must politely decline "
@@ -19,7 +24,7 @@ chat = client.chats.create(
 )
 
 
-print("Welcome to BengalBot! Ask me anything about Bangladesh.")
+print("Welcome to BanglaBot! Ask me anything about Bangladesh.\n")
 print("Type 'exit' to end the conversation.")
 
 while True:
@@ -28,4 +33,5 @@ while True:
         print("BengalBot: Goodbye! Have a great day!")
         break
     response = chat.send_message(user_input)
-    print(f"BengalBot: {response.text}")
+    print(Back.CYAN + Fore.BLACK + f"BengalBot:" + Style.RESET_ALL)
+    print(response.text)
